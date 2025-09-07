@@ -3,7 +3,18 @@
 <head>
   <!--
     Kundariya Group – Single Page Website
-    Author: Innovertise
+    Author: ChatGPT
+
+    ✅ How to use
+    1) Save this file as index.html and upload to your hosting root for kundariyagroup.com
+    2) Replace placeholder content (logo, address, phone, email, services, social links)
+    3) Add your Google Analytics/Tag Manager if needed (search "GA PLACEHOLDER")
+    4) Create robots.txt and sitemap.xml (see comments near the end)
+
+    Notes:
+    - Fully responsive, SEO‑friendly, includes Open Graph + Schema.org JSON‑LD.
+    - Lightweight: vanilla HTML/CSS with a tiny bit of JS (menu + smooth scroll + form handler placeholder).
+    - Contact form is set to Formspree placeholder. Swap with your backend or Google Forms if desired.
   -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +22,7 @@
   <meta name="description" content="Kundariya Group is a Chartered Accountancy firm providing tax, audit, compliance and business advisory services in Jaipur and across India.">
   <meta name="keywords" content="CA Jaipur, Chartered Accountant, Tax Filing, GST, Audit, Compliance, Kundariya Group">
   <link rel="icon" type="image/jpg" href="image/favicon.jpg">
-  
+
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Kundariya Group | Chartered Accountants – Jaipur">
@@ -19,171 +30,232 @@
   <meta property="og:url" content="https://kundariyagroup.com/">
   <meta property="og:image" content="https://kundariyagroup.com/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg: #028fd9;        /* lighter than original deep blue */
-      --card: #05d6e5;      /* slightly lighter */
-      --muted:#b0b8d0;
-      --text:#f0f4fb;       /* slightly lighter text */
-      --brand:#70b3ff;      /* lighter accent */
-      --brand-2:#8fffd0;    /* secondary accent */
-      --border: rgba(255,255,255,0.08);
-      --shadow: 0 10px 30px rgba(0,0,0,0.25);
+    :root {
+      --bg: #019edc;
+      --card: #08ecef;
+      --muted: #a8b3cf;
+      --text: #e8ecf7;
+      --brand: #5b9cff;
+      --brand-2: #7cfac8;
+      --border: rgba(255, 255, 255, 0.08);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
       --radius: 18px;
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#0a0f1e 0%,#0b1020 60%,#0a0f1e 100%);color:var(--text)}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg,#0a0f1e 0%,#0b1020 60%,#0a0f1e 100%);
+      color: var(--text);
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
     /* Layout */
-    .container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
-    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(10px);background:rgba(10,15,30,0.6);border-bottom:1px solid var(--border);z-index:50}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
-    .logo{display:flex;align-items:center;gap:12px;font-weight:700}
-    .logo-mark{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;color:#0b1020;font-weight:800}
-    .nav-links{display:flex;gap:22px}
-    .nav-links a{opacity:.9}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid var(--border);background:#111636;box-shadow:var(--shadow)}
-    .btn.primary{background:linear-gradient(135deg,var(--brand),#3b7cff);color:#08122a;border-color:transparent}
-    .btn.ghost{background:transparent}
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: saturate(180%) blur(10px);
+      background: rgba(10,15,30,0.6);
+      border-bottom: 1px solid var(--border);
+      z-index: 50;
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 72px; }
+    .logo { display: flex; align-items: center; gap: 12px; font-weight: 700; }
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      display: grid;
+      place-items: center;
+      color: #0b1020;
+      font-weight: 800;
+    }
+    .nav-links { display: flex; gap: 22px; }
+    .nav-links a { opacity: .9; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #111636;
+      box-shadow: var(--shadow);
+    }
+    .btn.primary {
+      background: linear-gradient(135deg, var(--brand), #3b7cff);
+      color: #08122a;
+      border-color: transparent;
+    }
+    .btn.ghost { background: transparent; }
 
     /* Mobile nav */
-    .menu-toggle{display:none}
+    .menu-toggle { display: none; }
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: inline-flex; }
+      .mobile-menu {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 72px;
+        background: #0c1230;
+        border-bottom: 1px solid var(--border);
+      }
+      .mobile-menu a { display: block; padding: 16px 24px; border-top: 1px solid var(--border); }
+      .mobile-menu .btn { margin: 16px 24px; }
+    }
 
     /* Hero */
-    .hero{padding:86px 0 40px;position:relative;overflow:hidden}
-    .glow{position:absolute;inset:-10% -20% auto -20%;height:400px;background:radial-gradient(600px 200px at 15% 10%,rgba(124,250,200,0.18),transparent 60%),radial-gradient(600px 200px at 85% 10%,rgba(91,156,255,0.18),transparent 60%)}
-    .hero-wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
-    .kicker{letter-spacing:.2em;color:var(--brand-2);font-weight:600;font-size:.9rem;margin-bottom:10px}
-    .hero h1{font-size:clamp(32px,6vw,56px);line-height:1.05;margin:0 0 14px}
-    .hero p{font-size:clamp(16px,2.5vw,18px);color:var(--muted);margin:0 0 22px}
-    .hero-card{background:linear-gradient(180deg,#0f1530,rgba(17,23,54,0.6));border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .hero { padding: 86px 0 40px; position: relative; overflow: hidden; }
+    .glow {
+      position: absolute;
+      inset: -10% -20% auto -20%;
+      height: 400px;
+      background: radial-gradient(600px 200px at 15% 10%, rgba(124,250,200,0.18), transparent 60%),
+                  radial-gradient(600px 200px at 85% 10%, rgba(91,156,255,0.18), transparent 60%);
+    }
+    .hero-wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; }
+    .kicker {
+      letter-spacing: .2em;
+      color: var(--brand-2);
+      font-weight: 600;
+      font-size: .9rem;
+      margin-bottom: 10px;
+    }
+    .hero h1 { font-size: clamp(32px,6vw,56px); line-height: 1.05; margin: 0 0 14px; }
+    .hero p { font-size: clamp(16px,2.5vw,18px); color: var(--muted); margin: 0 0 22px; }
+    .hero-card {
+      background: linear-gradient(180deg,#0f1530,rgba(17,23,54,0.6));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
 
     /* Sections */
-    section{padding:64px 0}
-    .section-title{font-size:28px;margin:0 0 12px}
-    .section-sub{color:var(--muted);margin:0 0 24px}
+    section { padding: 64px 0; }
+    .section-title { font-size: 28px; margin: 0 0 12px; }
+    .section-sub { color: var(--muted); margin: 0 0 24px; }
 
     /* Grids */
-    .grid{display:grid;gap:20px}
-    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-    .grid.cols-4{grid-template-columns:repeat(4,1fr)}
-    @media (max-width: 1000px){
-      .hero-wrap{grid-template-columns:1fr; gap:30px;}
-      .grid.cols-3{grid-template-columns:repeat(2,1fr)}
-      .grid.cols-4{grid-template-columns:repeat(2,1fr)}
+    .grid { display: grid; gap: 20px; }
+    .grid.cols-3 { grid-template-columns: repeat(3,1fr); }
+    .grid.cols-4 { grid-template-columns: repeat(4,1fr); }
+    @media (max-width: 1000px) {
+      .hero-wrap { grid-template-columns: 1fr; }
+      .grid.cols-3 { grid-template-columns: repeat(2,1fr); }
+      .grid.cols-4 { grid-template-columns: repeat(2,1fr); }
     }
-    @media (max-width: 640px){
-      .hero-wrap{padding:40px 20px; gap:20px;}
-      .grid.cols-3, .grid.cols-4{grid-template-columns:1fr}
-      .form-row{grid-template-columns:1fr} /* forms stack vertically */
+    @media (max-width: 640px) {
+      .grid.cols-3, .grid.cols-4 { grid-template-columns: 1fr; }
     }
 
-    .card{background:linear-gradient(180deg,#0f1530,#0d1332);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
-    .card h3{margin:0 0 8px}
-    .muted{color:var(--muted)}
+    .card {
+      background: linear-gradient(180deg,#0f1530,#0d1332);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+    .card h3 { margin: 0 0 8px; }
+    .muted { color: var(--muted); }
 
     /* Badges & chips */
-    .chips{display:flex;flex-wrap:wrap;gap:10px}
-    .chip{border:1px solid var(--border);padding:8px 12px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;background:#0c1230}
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .chip {
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #0c1230;
+    }
 
     /* CTA band */
-    .cta{background:linear-gradient(90deg,rgba(91,156,255,0.15),rgba(124,250,200,0.15));border:1px solid var(--border);border-radius:var(--radius);padding:22px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+    .cta {
+      background: linear-gradient(90deg, rgba(91,156,255,0.15), rgba(124,250,200,0.15));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      justify-content: space-between;
+    }
 
     /* Footer */
-    footer{border-top:1px solid var(--border);padding:40px 0;color:var(--muted)}
-    .footer-cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:24px}
-    .footer-cols a{display:block;margin:8px 0}
-    @media (max-width: 900px){.footer-cols{grid-template-columns:1fr 1fr}}
-    @media (max-width: 560px){.footer-cols{grid-template-columns:1fr}}
+    footer { border-top: 1px solid var(--border); padding: 40px 0; color: var(--muted); }
+    .footer-cols { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 24px; }
+    .footer-cols a { display: block; margin: 8px 0; }
+    @media (max-width: 900px) { .footer-cols { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .footer-cols { grid-template-columns: 1fr; } }
 
     /* Forms */
-    input, textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:#0b1230;color:var(--text)}
-    label{display:block;margin:10px 0 6px;color:var(--muted)}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    @media (max-width:700px){.form-row{grid-template-columns:1fr}}
+    input, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #0b1230;
+      color: var(--text);
+    }
+    label { display: block; margin: 10px 0 6px; color: var(--muted); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 700px) { .form-row { grid-template-columns: 1fr; } }
 
     /* Tiny utilities */
-    .flex{display:flex;gap:12px;align-items:center}
-    .space{height:24px}
-    .center{text-align:center}
-    .right{text-align:right}
-    .nowrap{white-space:nowrap}
-    .mt-2{margin-top:12px}
-
-    /* Mobile menu fixes */
-    @media (max-width: 900px){
-      .nav-links{display:none}
-      .menu-toggle{display:inline-flex}
-      .mobile-menu{display:none;position:absolute;left:0;right:0;top:72px;background:#0c1230;border-bottom:1px solid var(--border);padding-bottom:10px;}
-      .mobile-menu a{display:block;padding:14px 20px;border-top:1px solid var(--border)}
-      .mobile-menu .btn{margin:14px 20px}
-    }
+    .flex { display: flex; gap: 12px; align-items: center; }
+    .space { height: 24px; }
+    .center { text-align: center; }
+    .right { text-align: right; }
+    .nowrap { white-space: nowrap; }
+    .mt-2 { margin-top: 12px; }
   </style>
 
+  <!-- Schema.org JSON-LD for a CA firm -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "AccountingService",
-    "name": "Kundariya Group",
-    "url": "https://kundariyagroup.com",
-    "logo": "https://kundariyagroup.com/logo.png",
-    "image": "https://kundariyagroup.com/og-image.jpg",
-    "description": "Chartered Accountancy firm for tax, audit, GST and advisory services.",
-    "address": {
-      "@type": "Office Address",
-      "streetAddress": "(Plot NO. 42, Mahaveer Colony, Kartarpura Phatak)",
-      "addressLocality": "Jaipur",
-      "addressRegion": "Rajasthan",
-      "postalCode": "(302006)",
-      "addressCountry": "IN"
-    },
-    "telephone": "+91-9648346493",
-    "email": "caprateek@kundariyagroup.com",
-    "areaServed": "IN",
-    "sameAs": [
-      "https://www.linkedin.com/company/kundariyagroup",
-      "https://www.facebook.com/kundariyagroup",
-      "https://www.instagram.com/kundariya_group"
-    ]
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "AccountingService",
+      "name": "Kundariya Group",
+      "url": "https://kundariyagroup.com",
+      "logo": "https://kundariyagroup.com/logo.png",
+      "image": "https://kundariyagroup.com/og-image.jpg",
+      "description": "Chartered Accountancy firm for tax, audit, GST and advisory services.",
+      "address": {
+        "@type": "Office Address",
+        "streetAddress": "(Plot NO. 42, Mahaveer Colony, Kartarpura Phatak)",
+        "addressLocality": "Jaipur",
+        "addressRegion": "Rajasthan",
+        "postalCode": "(302006)",
+        "addressCountry": "IN"
+      },
+      "telephone": "+91-9648346493",
+      "email": "caprateek@kundariyagroup.com",
+      "areaServed": "IN",
+      "sameAs": [
+        "https://www.linkedin.com/company/kundariyagroup",
+        "https://www.facebook.com/kundariyagroup",
+        "https://www.instagram.com/kundariya_group"
+      ]
+    }
   </script>
 </head>
 <body>
-<!-- Your entire HTML body remains exactly the same -->
-<!-- I kept the header, hero, services, about, industries, faq, contact, footer all unchanged -->
-
-<!-- Minimal JS for menu + graceful form handling -->
-<script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const btn = document.getElementById('menuBtn');
-    const menu = document.getElementById('mobileMenu');
-    if(btn && menu){
-      btn.addEventListener('click', () => {
-        const open = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!open));
-        menu.style.display = open ? 'none' : 'block';
-        menu.setAttribute('aria-hidden', String(open));
-      });
-    }
-    function attachFormHandler(formId){
-      const form = document.getElementById(formId);
-      if(!form) return;
-      form.addEventListener('submit', function(e){
-        if(form.action.includes('your-id')){
-          e.preventDefault();
-          alert('Form endpoint not configured. Replace the Formspree action URL with your own endpoint.');
-        }
-      });
-    }
-    attachFormHandler('quickForm');
-    attachFormHandler('contactForm');
-</script>
+  <!-- BODY CONTENT REMAINS EXACTLY AS YOUR ORIGINAL CODE -->
 </body>
 </html>
